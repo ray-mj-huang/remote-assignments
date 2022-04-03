@@ -1,0 +1,216 @@
+* {
+	border-box: box-sizing;
+	margin: 0;
+	/*border: solid #ccc 0.1px;*/
+}
+
+
+html,head,body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.display-flex {
+	display: flex;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.a-center {
+	align-items: center;
+}
+.j-center {
+	justify-content: center;
+}
+.j-sp-bt {
+	justify-content: space-between;
+}
+.t-center {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.fz-1 {
+	font-size: 40px;
+}
+.fz-2 {
+	font-size: 28px;
+}
+.fz-3 {
+	font-size: 18px;
+}
+
+
+body {
+	padding-bottom: 300px;
+}
+
+nav {
+	background: #eee;
+	position: fixed;
+
+	width: 100%;
+}
+.nav-wrap {
+	height: 55px;
+	padding: 0 20px;
+}
+
+.site-title {
+	margin: 0 20px;
+	margin-right: 10px;
+}
+
+.logo {
+	width: 38px;
+	height: auto;
+}
+
+.logo img{
+	width: 100%;
+}
+
+.item-list li {
+	margin: 0 20px;
+}
+
+
+
+
+section.header {
+	background: #aaa;
+	height: 305px;
+	padding-top: 55px;
+}
+
+section.content {
+	padding: 0 20px;
+}
+
+section.content h2{
+	margin: 20px 0;
+}
+
+.content-box-wrap {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+.content-box {
+	background: #666;
+	width: calc(50% - 10px);
+	height: 150px;
+	margin: 10px 0;
+	padding-top: 10px;
+}
+
+
+button.cta {
+	background: #aaa;
+	border: 0;
+	padding: 10px 15px;
+	display: block;
+	margin: 50px auto;
+}
+
+
+.icon-ham {
+	display: none;
+	width: 40px;
+	height: auto;
+}
+.icon-ham img {
+	display: block;
+	width: 100%;
+}
+
+
+
+.mb-menu {
+	background: yellow;
+	position: fixed;
+	right: 0;
+	width: 280px;
+	height: 100%;
+	padding: 30px 10px;
+
+	display: none;
+}
+
+
+.mb-menu .item-list {
+	display: block;
+}
+
+
+.mb-menu .item-list li {
+	padding: 10px 20px;
+}
+
+.mb-menu-close {
+	position: absolute;
+	width: 25px;
+	height: auto;
+	top: 15px;
+	right: 15px;
+}
+
+.mb-menu-close img {
+	display: block;
+	width: 100%;
+}
+
+.display-none {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+
+
+@media (max-width: 500px) {
+	.item-list {
+		display: none;
+	}
+	.icon-ham {
+		display: block;
+	}
+
+	.content-box {
+		width: 100%;
+	}
+
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+	.item-list {
+		display: none;
+	}
+	.icon-ham {
+		display: block;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+	section.content {
+		padding: 0 20px;
+	}
+}
+
+@media (min-width: 1200px) {
+	section.content {
+		padding: 0;
+	}
+
+}
