@@ -78,10 +78,20 @@ class MbMenu extends React.Component {
 
 class Header extends React.Component {
 
+    state = {
+        title : "Welcome Message"
+    }
+
+    clickTitle () {        
+        this.setState({
+            title:  "Hava a Good Time!"
+        });
+    }
+
     render () {
         return (
-            <section id="webTitleBlock" className="header display-flex a-center j-center">
-                <h1 id="webTitle" className="fz-1 t-center">Welcome Message</h1>
+            <section id="webTitleBlock" className="header display-flex a-center j-center" onClick={this.clickTitle.bind(this)}>
+                <h1 id="webTitle" className="fz-1 t-center">{ this.state.title }</h1>
             </section>
         )
     }
@@ -106,6 +116,7 @@ class Box extends React.Component {
 
 class MoreBox extends React.Component {
 
+
     render () {
         return (
             <div id="moreBox" className="display-none content-box-wrap fz-3 display-flex flex-wrap j-sp-bt">
@@ -121,6 +132,8 @@ class MoreBox extends React.Component {
 
 
 class Content extends React.Component {
+
+
 
     render () {
         return (
@@ -142,10 +155,6 @@ class Content extends React.Component {
 
 
 class MyApp extends React.Component {
-
-    state = {
-        title : "Welcome Message"
-    }
 
 
     render() {
