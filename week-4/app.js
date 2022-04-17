@@ -1,61 +1,3 @@
-
-
-
-
-
-class Navbar extends React.Component {
-
-    render () {
-        return (
-            <nav>
-                <div className="nav-wrap display-flex j-sp-bt a-center">
-                    
-                    <div className="display-flex">
-                        <div className="site-title display-flex a-center fz-3">Website Title</div>
-                        <div className="logo display-flex a-center">
-                            <img src="assets/earth.png" />
-                        </div>
-                    </div>
-
-                    <ul className="item-list fz-3 display-flex">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>
-
-                    <div id="iconHam" className="icon-ham">
-                        <img src="assets/ham.png" />
-                    </div>
-                </div>
-            </nav>
-        )
-    }
-}
-
-
-class MbMenu extends React.Component {
-
-    render () {
-        return (
-            <div id="mbMenu" className="mb-menu display-flex j-sp-bt">
-                <ul className="item-list fz-3 display-flex">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                </ul>
-                <div id="iconClose" className="mb-menu-close">
-                    <img src="assets/close.png"/>
-                </div>
-            </div>
-        )
-    }
-}
-
-
-
-
 class Header extends React.Component {
 
     state = {
@@ -94,26 +36,20 @@ class Box extends React.Component {
 }
 
 
-class MoreBox extends React.Component {
-
-
-    render () {
-        return (
-            <div id="moreBox" className="display-none content-box-wrap fz-3 display-flex flex-wrap j-sp-bt">
-                <div className="content-box t-center">Content Box 5</div>
-                <div className="content-box t-center">Content Box 6</div>
-                <div className="content-box t-center">Content Box 7</div>
-                <div className="content-box t-center">Content Box 8</div>
-            </div>          
-        )
-    }
-}
 
 
 
 class Content extends React.Component {
 
+    state = {
+      show: "display-none content-box-wrap fz-3 display-flex flex-wrap j-sp-bt"
+    }
 
+    clickShow () {        
+        this.setState({
+            show: "content-box-wrap fz-3 display-flex flex-wrap j-sp-bt"
+        });
+    }
 
     render () {
         return (
@@ -123,9 +59,14 @@ class Content extends React.Component {
                 
                 <Box />
                 
-                <button id="callMoreBox" className="cta fz-3">Call to Action</button>
+                <button id="callMoreBox" className="cta fz-3" onClick={this.clickShow.bind(this)}>Call to Action</button>
 
-                <MoreBox />
+                <div id="moreBox" className= { this.state.show } >
+                    <div className="content-box t-center">Content Box 5</div>
+                    <div className="content-box t-center">Content Box 6</div>
+                    <div className="content-box t-center">Content Box 7</div>
+                    <div className="content-box t-center">Content Box 8</div>
+                </div> 
 
             </section>
         )
@@ -137,16 +78,66 @@ class Content extends React.Component {
 class MyApp extends React.Component {
 
 
+    state = {
+        aa: "mb-menu display-flex j-sp-bt"
+    }
+
+    xxShow () {
+        this.setState({
+            aa: "show mb-menu display-flex j-sp-bt"
+        })
+    }
+
+    zzShow () {
+        this.setState({
+            aa: "mb-menu display-flex j-sp-bt"
+        })
+    }
+
+
     render() {
         return (
             <div>
-                <Navbar />
 
-                <MbMenu />
+                <nav>
+                    <div className="nav-wrap display-flex j-sp-bt a-center">
+                        
+                        <div className="display-flex">
+                            <div className="site-title display-flex a-center fz-3">Website Title</div>
+                            <div className="logo display-flex a-center">
+                                <img src="assets/earth.png" />
+                            </div>
+                        </div>
+
+                        <ul className="item-list fz-3 display-flex">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ul>
+
+                        <div id="iconHam" className="icon-ham" onClick={this.xxShow.bind(this)}>
+                            <img src="assets/ham.png" />
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="mbMenu" className={ this.state.aa } >
+                    <ul className="item-list fz-3 display-flex">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                    </ul>
+                    <div id="iconClose" className="mb-menu-close" onClick={this.zzShow.bind(this)}>
+                        <img src="assets/close.png"/>
+                    </div>
+                </div>
 
                 <Header />
 
                 <Content />
+
             </div>
         )
     }
@@ -155,8 +146,4 @@ class MyApp extends React.Component {
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(<MyApp />);
-
-
-
-
 
