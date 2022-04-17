@@ -11,11 +11,9 @@ class Navbar extends React.Component {
                 <div className="nav-wrap display-flex j-sp-bt a-center">
                     
                     <div className="display-flex">
-                        <div className="site-title display-flex a-center fz-3">
-                            Website Title
-                        </div>
+                        <div className="site-title display-flex a-center fz-3">Website Title</div>
                         <div className="logo display-flex a-center">
-                            <img src={ require("assets/earth.png") } >
+                            <img src="assets/earth.png" />
                         </div>
                     </div>
 
@@ -27,8 +25,8 @@ class Navbar extends React.Component {
                     </ul>
 
                     <div id="iconHam" className="icon-ham">
-                        <img src={ require("assets/ham.png") } >
-                    </div
+                        <img src="assets/ham.png" />
+                    </div>
                 </div>
             </nav>
         )
@@ -48,7 +46,7 @@ class MbMenu extends React.Component {
                     <li>Item 4</li>
                 </ul>
                 <div id="iconClose" className="mb-menu-close">
-                    <img src={ require("assets/close.png") } >
+                    <img src="assets/close.png"/>
                 </div>
             </div>
         )
@@ -129,24 +127,19 @@ class MyApp extends React.Component {
         title : "Welcome Message"
     }
 
-    toggleTitle = (e) => {
-        this.setState({
-            title : "Have a Good Time!"
-        })
-    }
 
     render() {
         return (
+            <div>
+                <Navbar />
 
-            <Navbar />
+                <MbMenu />
 
-            <MbMenu />
+                <Header />
 
-            <Header toggleTitle = { this.toggleTitle } >{ this.state.title }</Header>
-
-            <Content />
-
-        );
+                <Content />
+            </div>
+        )
     }
 }
 
