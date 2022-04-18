@@ -79,18 +79,18 @@ class MyApp extends React.Component {
 
 
     state = {
-        setClass: "mb-menu display-flex j-sp-bt"
+        menuClass: "mb-menu display-flex j-sp-bt"
     }
 
     openMenu () {
         this.setState({
-            setClass: "show mb-menu display-flex j-sp-bt"
+            menuClass: "show mb-menu display-flex j-sp-bt"
         })
     }
 
     closeMenu () {
         this.setState({
-            setClass: "mb-menu display-flex j-sp-bt"
+            menuClass: "mb-menu display-flex j-sp-bt"
         })
     }
 
@@ -122,7 +122,7 @@ class MyApp extends React.Component {
                     </div>
                 </nav>
 
-                <div id="mbMenu" className={ this.state.setClass } >
+                <div id="mbMenu" className={ this.state.menuClass } >
                     <ul className="item-list fz-3 display-flex">
                         <li>Item 1</li>
                         <li>Item 2</li>
