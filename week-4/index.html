@@ -98,18 +98,18 @@ class MyApp extends React.Component {
 
 
     state = {
-        aa: "mb-menu display-flex j-sp-bt"
+        setClass: "mb-menu display-flex j-sp-bt"
     }
 
-    xxShow () {
+    openMenu () {
         this.setState({
-            aa: "show mb-menu display-flex j-sp-bt"
+            setClass: "show mb-menu display-flex j-sp-bt"
         })
     }
 
-    zzShow () {
+    closeMenu () {
         this.setState({
-            aa: "mb-menu display-flex j-sp-bt"
+            setClass: "mb-menu display-flex j-sp-bt"
         })
     }
 
@@ -135,20 +135,20 @@ class MyApp extends React.Component {
                             <li>Item 4</li>
                         </ul>
 
-                        <div id="iconHam" className="icon-ham" onClick={this.xxShow.bind(this)}>
+                        <div id="iconHam" className="icon-ham" onClick={this.openMenu.bind(this)}>
                             <img src="assets/ham.png" />
                         </div>
                     </div>
                 </nav>
 
-                <div id="mbMenu" className={ this.state.aa } >
+                <div id="mbMenu" className={ this.state.setClass } >
                     <ul className="item-list fz-3 display-flex">
                         <li>Item 1</li>
                         <li>Item 2</li>
                         <li>Item 3</li>
                         <li>Item 4</li>
                     </ul>
-                    <div id="iconClose" className="mb-menu-close" onClick={this.zzShow.bind(this)}>
+                    <div id="iconClose" className="mb-menu-close" onClick={this.closeMenu.bind(this)}>
                         <img src="assets/close.png"/>
                     </div>
                 </div>
